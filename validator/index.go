@@ -4,8 +4,10 @@ import (
 	"github.com/go-playground/validator"
 )
 
-var Validator *validator.Validate
+var client *validator.Validate
 
 func NewSingletonClient() {
-	Validator = validator.New()
+	if client == nil {
+		client = validator.New()
+	}
 }
